@@ -23,9 +23,14 @@ class simple_perceptron:
             return 0
         else: return 1
 
-    def OR(self, w=None, b=-0.2):
+    def OR(self, w=None, b=-0.3):
         w = np.array([1 / self.n] * self.n) if w is None else w
-        temp = np.sum(w*self.x) + b
+        temp = np.sum(w*self.x) + b 
         if temp <= 0:
             return 0
         else: return 1
+
+    def XOR(self, w=None, b=-0.7):
+        s1 = simple_perceptron(self.x).NAND()
+        s2 = simple_perceptron(self.x).OR()
+        return simple_perceptron(np.array([s1, s2])).AND()
