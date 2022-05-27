@@ -22,3 +22,10 @@ class simple_perceptron:
         if temp <= 0:
             return 0
         else: return 1
+
+    def OR(self, w=None, b=-0.2):
+        w = np.array([1 / self.n] * self.n) if w is None else w
+        temp = np.sum(w*self.x) + b
+        if temp <= 0:
+            return 0
+        else: return 1
