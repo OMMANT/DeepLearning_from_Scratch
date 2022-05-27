@@ -16,3 +16,9 @@ class simple_perceptron:
             return 0
         else: return 1
     
+    def NAND(self, w=None, b=0.7):
+        w = np.array([-1 / self.n] * self.n) if w is None else w
+        temp = np.sum(w*self.x) + b
+        if temp <= 0:
+            return 0
+        else: return 1
