@@ -32,5 +32,5 @@ class simple_perceptron:
 
     def XOR(self, w=None, b=-0.7):
         s1 = simple_perceptron(self.x).NAND()
-        s2 = simple_perceptron(self.x).OR()
+        s2 = simple_perceptron(self.x).OR(b=-0.3)
         return simple_perceptron(np.array([s1, s2])).AND()
